@@ -1,0 +1,122 @@
+[
+  {
+    "image": "https://pbs.twimg.com/media/FM2eqxfagAEvdmw.jpg",
+    "name": "Mohammad Naim",
+    "country": "Bangladesh",
+    "playing_role": "Top-order batter",
+    "rating": 85,
+    "batting_style": "Left-handed",
+    "bowling_style": "Left-arm medium",
+    "price": "Tk 1.10 crore"
+  },
+  {
+    "image": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/5612/63206.png",
+    "name": "Litton Das",
+    "country": "Bangladesh",
+    "playing_role": "Wicketkeeper-batter",
+    "rating": 88,
+    "batting_style": "Right-handed",
+    "bowling_style": "N/A",
+    "price": "Tk 70 lakh"
+  },
+  {
+    "image": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/generic/colored/67719.png",
+    "name": "Tawhid Hridoy",
+    "country": "Bangladesh",
+    "playing_role": "Middle-order batter",
+    "rating": 83,
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off-break",
+    "price": "Tk 92 lakh"
+  },
+  {
+    "image": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/generic/colored/64151.png",
+    "name": "Mohammad Saifuddin",
+    "country": "Bangladesh",
+    "playing_role": "Bowling all-rounder",
+    "rating": 86,
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast-medium",
+    "price": "Tk 68 lakh"
+  },
+  {
+    "image": "https://static-files.cricket-australia.pulselive.com/headshots/440/547-camedia.png",
+    "name": "Mahmudullah Riyad",
+    "country": "Bangladesh",
+    "playing_role": "Middle-order batter",
+    "rating": 80,
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off-break",
+    "price": "Tk 35 lakh"
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/79/Shoriful_Islam_%28cropped%29.jpg",
+    "name": "Shoriful Islam",
+    "country": "Bangladesh",
+    "playing_role": "Bowler",
+    "rating": 82,
+    "batting_style": "Right-handed",
+    "bowling_style": "Left-arm fast-medium",
+    "price": "Tk 44 lakh"
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Mushfiqur_Rahim_2015.jpg",
+    "name": "Mushfiqur Rahim",
+    "country": "Bangladesh",
+    "playing_role": "Wicketkeeper-batter",
+    "rating": 84,
+    "batting_style": "Right-handed",
+    "bowling_style": "N/A",
+    "price": "Tk 35 lakh"
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Mustafizur_Rahman_%28cropped%29.jpg",
+    "name": "Mustafizur Rahman",
+    "country": "Bangladesh",
+    "playing_role": "Bowler",
+    "rating": 90,
+    "batting_style": "Left-handed",
+    "bowling_style": "Left-arm fast-medium",
+    "price": "Retained"
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Taskin_Ahmed_%28cropped%29.jpg",
+    "name": "Taskin Ahmed",
+    "country": "Bangladesh",
+    "playing_role": "Bowler",
+    "rating": 88,
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast",
+    "price": "Direct Signing"
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Alex_Hales_%28cropped%29.jpg",
+    "name": "Alex Hales",
+    "country": "England",
+    "playing_role": "Batter",
+    "rating": 87,
+    "batting_style": "Right-handed",
+    "bowling_style": "N/A",
+    "price": "Overseas Signing"
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Dasun_Shanaka_in_2018.jpg",
+    "name": "Dasun Shanaka",
+    "country": "Sri Lanka",
+    "playing_role": "All-rounder",
+    "rating": 85,
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "price": "USD 55,000"
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Kusal_Mendis_2019.jpg",
+    "name": "Kusal Mendis",
+    "country": "Sri Lanka",
+    "playing_role": "Wicketkeeper-batter",
+    "rating": 88,
+    "batting_style": "Right-handed",
+    "bowling_style": "N/A",
+    "price": "Overseas Signing"
+  }
+]
