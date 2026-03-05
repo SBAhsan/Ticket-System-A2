@@ -1,5 +1,7 @@
 import React, { use } from "react";
 import Ticket from "../Ticket/Ticket";
+import TaskStatus from "../TaskStatus/TaskStatus";
+import ResolveTask from "../ResolveTask/ResolveTask";
 
 const Tickets = ({
   ticketsLink,
@@ -7,84 +9,75 @@ const Tickets = ({
   taskStatus,
   handleRemoveTaskStatus,
   handleResolveTask,
-  resolveTasks
+  resolveTasks,
 }) => {
   const tickets = use(ticketsLink);
 
   console.log(taskStatus);
 
   return (
-    <div className="flex justify-between mt-10">
-        {/* customer tickets */}
+    <div className="lg:flex lg:justify-between mt-15">
+      {/* customer tickets */}
       <div>
-        <h3 className="text-xl font-semibold md:text-start mb-5">
+        <h3 className="text-xl font-semibold text-center lg:text-start mb-5">
           Customer Tickets
         </h3>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {tickets.map((ticket) => (
-            <Ticket
-              key={ticket.id}
-              ticket={ticket}
-              handleTaskStatus={handleTaskStatus}
-            ></Ticket>
-          ))}
-        </ul>
+        <div className="flex justify-center">
+          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            {tickets.map((ticket) => (
+              <Ticket
+                key={ticket.id}
+                ticket={ticket}
+                handleTaskStatus={handleTaskStatus}
+              ></Ticket>
+            ))}
+          </ul>
+        </div>
       </div>
 
       {/* task status and resolve task part */}
-      <div>
+      <div className="mx-8 shadow-md">
         {/* task status */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Task Status</h3>
-          {taskStatus.length > 0 ? (
-            <ul>
-              {taskStatus.map((task) => {
-                return (
-                  <div
+          <h3 className="text-xl font-semibold mb-4 mt-15 lg:mt-0 text-center lg:text-start">
+            Task Status
+          </h3>
+          <div className="flex justify-center">
+            {taskStatus.length > 0 ? (
+              <ul>
+                {taskStatus.map((task) => (
+                  <TaskStatus
                     key={task.id}
-                    className="font-semibold w-64 px-4 py-3 shadow-md rounded-md"
-                  >
-                    <h3 className="mb-3">{task.title}</h3>
-                    <button
-                      onClick={() => {
-                        handleRemoveTaskStatus(task.id);
-                        handleResolveTask(task.title);
-                      }}
-                      className="bg-[#02A53B] text-white w-full rounded-md py-1"
-                    >
-                      Complete
-                    </button>
-                  </div>
-                );
-              })}
-            </ul>
-          ) : (
-            <p className="text-gray-400">
-              Select a ticket to add to Task Status
-            </p>
-          )}
+                    task={task}
+                    handleRemoveTaskStatus={handleRemoveTaskStatus}
+                    handleResolveTask={handleResolveTask}
+                  ></TaskStatus>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-400">
+                Select a ticket to add to Task Status
+              </p>
+            )}
+          </div>
         </div>
 
         {/* resolved task */}
-        <div className="mt-9">
-          <h3 className="text-xl font-semibold mb-4">Resolved Task</h3>
-          {resolveTasks.length > 0 ? (
-            <ul>
-              {resolveTasks.map((task, index) => {
-                return (
-                  <li
-                    key={index}
-                    className="font-semibold w-64 px-4 py-2 bg-[#E0E7FF] rounded-md"
-                  >
-                    <h3 className="mb-3">{task}</h3>
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            <p className="text-gray-400">No resolved tasks yet.</p>
-          )}
-          
+        <div className="mt-10">
+          <h3 className="text-xl font-semibold mb-4 text-center lg:text-start">
+            Resolved Task
+          </h3>
+          <div className="flex justify-center">
+            {resolveTasks.length > 0 ? (
+              <ul>
+                {resolveTasks.map((task, index) => (
+                  <ResolveTask key={index} task={task}></ResolveTask>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-400">No resolved tasks yet.</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
