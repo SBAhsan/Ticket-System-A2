@@ -4,7 +4,7 @@ const Ticket = ({ ticket, handleTaskStatus }) => {
   const { title, status, description, id, priority, customer, createdAt } =
     ticket;
   return (
-    <a onClick={() => handleTaskStatus(title)}>
+    <a onClick={() => handleTaskStatus(ticket)}>
       <div className="card w-[450px] bg-base-100 card-md shadow-sm">
         <div className="card-body">
           <div className="flex justify-between">

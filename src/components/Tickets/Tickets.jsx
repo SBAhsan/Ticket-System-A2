@@ -1,7 +1,13 @@
 import React, { use } from "react";
 import Ticket from "../Ticket/Ticket";
 
-const Tickets = ({ ticketsLink, handleTaskStatus, taskStatus }) => {
+const Tickets = ({
+  ticketsLink,
+  handleTaskStatus,
+  taskStatus,
+  handleRemoveTaskStatus,
+  handleResolveTask,
+}) => {
   const tickets = use(ticketsLink);
 
   console.log(taskStatus);
@@ -26,11 +32,20 @@ const Tickets = ({ ticketsLink, handleTaskStatus, taskStatus }) => {
             <h3 className="text-xl font-semibold">Task Status</h3>
             {taskStatus.length > 0 ? (
               <ul>
-                {taskStatus.map((task, index) => {
+                {taskStatus.map((task) => {
                   return (
-                    <div key={index} className="font-semibold w-64 px-4 py-3 shadow-xl">
-                      <h3 className="mb-3">{task}</h3>
-                      <button className="bg-[#02A53B] text-white w-full rounded-md">
+                    <div
+                      key={task.id}
+                      className="font-semibold w-64 px-4 py-3 shadow-xl"
+                    >
+                      <h3 className="mb-3">{task.title}</h3>
+                      <button
+                        onClick={() => {
+                            handleRemoveTaskStatus(task.id);
+                            handleResolveTask(task.title);
+                        }}
+                        className="bg-[#02A53B] text-white w-full rounded-md"
+                      >
                         Complete
                       </button>
                     </div>
