@@ -1,7 +1,6 @@
 const Navbar = () => {
   return (
-    <div>
-      <div className="navbar py-5">
+      <div className="navbar py-5 shadow-md">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,9 +44,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl font-bold">
-            CS — Ticket System
-          </a>
+          <a className="btn btn-ghost text-xl font-bold">CS — Ticket System</a>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -73,13 +70,12 @@ const Navbar = () => {
 
           <div className="">
             <button className="btn btn-outline flex items-center gap-3 text-white border-0 bg-gradient-to-br from-purple-700 via-purple-500 to-purple-400">
-             <img src="../../../src/assets/add.png" alt="" />
-             <span>New Ticket</span>
+              <img src="../../../src/assets/add.png" alt="" />
+              <span>New Ticket</span>
             </button>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
