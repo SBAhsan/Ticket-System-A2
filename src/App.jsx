@@ -6,7 +6,7 @@ import Tickets from "./components/Tickets/Tickets";
 import Footer from "./components/Footer/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 
-const ticketsLink = fetch("/public/tickets.json").then((res) => res.json());
+const ticketsLink = fetch("tickets.json").then((res) => res.json());
 
 function App() {
   const [taskStatus, setTaskStatus] = useState([]);
