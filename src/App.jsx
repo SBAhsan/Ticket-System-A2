@@ -4,9 +4,9 @@ import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 import Tickets from "./components/Tickets/Tickets";
 import Footer from "./components/Footer/Footer";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
-const ticketsLink = fetch("tickets.json").then((res) => res.json());
+const ticketsLink = fetch("/tickets.json").then((res) => res.json());
 
 function App() {
   const [taskStatus, setTaskStatus] = useState([]);
@@ -22,22 +22,30 @@ function App() {
 
   const handleRemoveTaskStatus = (taskId) => {
     console.log("Resolve task clicked");
-    const newTasks = taskStatus.filter(task => task.id !== taskId);
+    const newTasks = taskStatus.filter((task) => task.id !== taskId);
     setTaskStatus(newTasks);
     setInProgressCount(inProgressCount - 1);
-    toast(`One task is completed. ${newTasks.length} more tasks remaining.`)
+
+    if (newTasks.length === 0) {
+      toast("Congratulations! All the tasks are completed.");
+    } else {
+      toast(`One task is completed. ${newTasks.length} more tasks remaining.`);
+    }
   };
 
   const handleResolveTask = (taskTitle) => {
     const newResolveTasks = [...resolveTasks, taskTitle];
     setResolveTasks(newResolveTasks);
     setResolveCount(resolveCount + 1);
-  }
+  };
 
   return (
     <div className="max-w-[1200px] mx-auto">
       <Navbar></Navbar>
-      <Banner inProgressCount={inProgressCount} resolveCount={resolveCount}></Banner>
+      <Banner
+        inProgressCount={inProgressCount}
+        resolveCount={resolveCount}
+      ></Banner>
 
       <Suspense fallback={"Loading..."}>
         <Tickets

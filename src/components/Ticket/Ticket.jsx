@@ -1,4 +1,5 @@
-import React from "react";
+import openImg from '../../assets/Open.png';
+import progressImg from '../../assets/In-progress.png';
 
 const Ticket = ({ ticket, handleTaskStatus }) => {
   const { title, status, description, id, priority, customer, createdAt } =
@@ -16,9 +17,9 @@ const Ticket = ({ ticket, handleTaskStatus }) => {
             >
               <span>
                 {status === "Open" ? (
-                  <img src="../../../src/assets/Open.png" />
+                  <img src={openImg} />
                 ) : status === "In Progress" ? (
-                  <img src="../../../src/assets/In-progress.png" />
+                  <img src={progressImg} />
                 ) : (
                   ""
                 )}

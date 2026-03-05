@@ -1,3 +1,5 @@
+import addImg from '../../assets/add.png'
+
 const Navbar = () => {
   return (
     <div className="navbar py-5 shadow-md">
@@ -71,7 +73,7 @@ const Navbar = () => {
       </div>
       <div className="">
         <button className="btn btn-outline flex items-center gap-3 text-white border-0 bg-gradient-to-br from-purple-700 via-purple-500 to-purple-400">
-          <img src="../../../src/assets/add.png" alt="" />
+          <img src={addImg} alt="" />
           <span>New Ticket</span>
         </button>
       </div>
