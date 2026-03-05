@@ -36,7 +36,7 @@ const Tickets = ({
       </div>
 
       {/* task status and resolve task part */}
-      <div className="mx-8 shadow-md">
+      <div className="mx-8 shadow-md lg:mx-0 lg:shadow-none">
         {/* task status */}
         <div>
           <h3 className="text-xl font-semibold mb-4 mt-15 lg:mt-0 text-center lg:text-start">

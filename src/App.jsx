@@ -3,6 +3,8 @@ import "./App.css";
 import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 import Tickets from "./components/Tickets/Tickets";
+import Footer from "./components/Footer/Footer";
+import { ToastContainer, toast } from 'react-toastify';
 
 const ticketsLink = fetch("/public/tickets.json").then((res) => res.json());
 
@@ -22,7 +24,8 @@ function App() {
     console.log("Resolve task clicked");
     const newTasks = taskStatus.filter(task => task.id !== taskId);
     setTaskStatus(newTasks);
-    setInProgressCount(inProgressCount - 1);    
+    setInProgressCount(inProgressCount - 1);
+    toast(`One task is completed. ${newTasks.length} more tasks remaining.`)
   };
 
   const handleResolveTask = (taskTitle) => {
@@ -46,6 +49,8 @@ function App() {
           handleResolveTask={handleResolveTask}
         ></Tickets>
       </Suspense>
+      <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }
