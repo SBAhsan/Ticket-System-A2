@@ -13,13 +13,29 @@ const Tickets = ({
 }) => {
   const tickets = use(ticketsLink);
 
-  const [removedTicketFromCustomerTickets, setRemovedTicketFromCustomerTickets] = useState([]);
-  
+  const [
+    removedTicketFromCustomerTickets,
+    setRemovedTicketFromCustomerTickets,
+  ] = useState([]);
+
+  //   const handleRemovedTicketFromCustomerTickets = (ticket) => {
+  //     const newTicketList = tickets.filter(
+  //       (removedTicket) => removedTicket.id !== ticket.id,
+  //     );
+  //     setRemovedTicketFromCustomerTickets(newTicketList);
+  //   };
 
   const handleRemovedTicketFromCustomerTickets = (ticket) => {
-    const newTicketList = tickets.filter(removedTicket => removedTicket.id !== ticket.id)
-    setRemovedTicketFromCustomerTickets(newTicketList);
-  }
+    setRemovedTicketFromCustomerTickets((prev) => {
+      const filtered = prev.filter((t) => t.id !== ticket.id);
+      return [...filtered, ticket];
+    });
+  };
+
+  const visibleTickets = tickets.filter(
+    (ticket) =>
+      !removedTicketFromCustomerTickets.find((r) => r.id === ticket.id),
+  );
 
   console.log(removedTicketFromCustomerTickets);
 
@@ -31,27 +47,17 @@ const Tickets = ({
           Customer Tickets
         </h3>
         <div className="flex justify-center">
-          {removedTicketFromCustomerTickets.length === 0 ? (
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-              {tickets.map((ticket) => (
-                <Ticket
-                  key={ticket.id}
-                  ticket={ticket}
-                  handleTaskStatus={handleTaskStatus}
-                ></Ticket>
-              ))}
-            </ul>
-          ) : (
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-              {removedTicketFromCustomerTickets.map((ticket) => (
-                <Ticket
-                  key={ticket.id}
-                  ticket={ticket}
-                  handleTaskStatus={handleTaskStatus}
-                ></Ticket>
-              ))}
-            </ul>
-          )}
+          {
+            visibleTickets.length === 0 ? <p className="mt-15 text-lg text-gray-400 text-center">No Ticket Remaining</p> 
+            : <ul className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            {visibleTickets.map((ticket) => (
+              <Ticket
+                key={ticket.id}
+                ticket={ticket}
+                handleTaskStatus={handleTaskStatus}
+              ></Ticket>
+            ))}
+          </ul>}
         </div>
       </div>
 
@@ -72,7 +78,7 @@ const Tickets = ({
                     handleRemoveTaskStatus={handleRemoveTaskStatus}
                     handleResolveTask={handleResolveTask}
                     handleRemovedTicketFromCustomerTickets={
-                    handleRemovedTicketFromCustomerTickets
+                      handleRemovedTicketFromCustomerTickets
                     }
                   ></TaskStatus>
                 ))}

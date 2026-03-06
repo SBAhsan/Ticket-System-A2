@@ -19,10 +19,8 @@ const Ticket = ({ ticket, handleTaskStatus }) => {
               <span>
                 {status === "Open" ? (
                   <img src={openImg} />
-                ) : status === "In Progress" ? (
+                ) : status === "In Progress" && (
                   <img src={progressImg} />
-                ) : (
-                  ""
                 )}
               </span>
               {status}

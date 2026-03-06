@@ -13,12 +13,15 @@ function App() {
   const [inProgressCount, setInProgressCount] = useState(0);
   const [resolveTasks, setResolveTasks] = useState([]);
   const [resolveCount, setResolveCount] = useState(0);
-  
 
   const handleTaskStatus = (ticket) => {
-    const newTasks = [...taskStatus, ticket];
-    setTaskStatus(newTasks);
-    setInProgressCount(inProgressCount + 1);
+    const alreadyExists = taskStatus.some((task) => task.id === ticket.id);
+
+    if (!alreadyExists) {
+      const newTasks = [...taskStatus, ticket];
+      setTaskStatus(newTasks);
+      setInProgressCount(inProgressCount + 1);
+    }
   };
 
   const handleRemoveTaskStatus = (taskId) => {
@@ -29,7 +32,9 @@ function App() {
     if (newTasks.length === 0) {
       toast("Congratulations paglu! All the tasks are completed.");
     } else {
-      toast(`One task is completed, paglu! ${newTasks.length} more tasks remaining.`);
+      toast(
+        `One task is completed, paglu! ${newTasks.length} more tasks remaining.`,
+      );
     }
   };
 
@@ -39,8 +44,6 @@ function App() {
     setResolveCount(resolveCount + 1);
   };
 
-  
-
   return (
     <div className="max-w-[1200px] mx-auto">
       <Navbar></Navbar>
@@ -49,7 +52,7 @@ function App() {
         resolveCount={resolveCount}
       ></Banner>
 
-      <Suspense fallback={"Loading..."}>
+      <Suspense fallback={<span className="loading loading-spinner loading-lg ml-70 mt-25 lg:ml-[595px]"></span>}>
         <Tickets
           ticketsLink={ticketsLink}
           taskStatus={taskStatus}

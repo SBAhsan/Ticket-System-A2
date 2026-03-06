@@ -2,39 +2,39 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-20">
+    <div className="mt-20 text-center md:text-start">
       <footer className="bg-neutral text-white">
-        <div className="footer footer-vertical md:footer-horizontal md:ml-10 p-10">
-          <nav>
-            <h6 className="footer-title ">CS — Ticket System</h6>
-            <p className="w-50">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-23 md:ml-10 p-10">
+          <nav className="flex flex-col items-center">
+            <h6 className="font-semibold text-lg mb-4">CS — Ticket System</h6>
+            <p className="w-50 text-gray-400">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
             </p>
           </nav>
-          <nav>
-            <h6 className="footer-title">Company</h6>
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Our Mission</a>
-            <a className="link link-hover">Contact Sale</a>
+          <nav className="flex flex-col">
+            <h6 className="font-semibold text-lg mb-4">Company</h6>
+            <a className="text-gray-400">About us</a>
+            <a className="text-gray-400">Our Mission</a>
+            <a className="text-gray-400">Contact Sale</a>
+          </nav>
+          <nav className="flex flex-col">
+            <h6 className="font-semibold text-lg mb-4">Services</h6>
+            <a className="text-gray-400">Products & Services</a>
+            <a className="text-gray-400">Customer Stories</a>
+            <a className="text-gray-400">Download Apps</a>
+          </nav>
+          <nav className="flex flex-col">
+            <h6 className="font-semibold text-lg mb-4">Information</h6>
+            <a className="text-gray-400">Privacy Policy</a>
+            <a className="text-gray-400">Terms & Conditions</a>
+            <a className="text-gray-400">Join Us</a>
           </nav>
           <nav>
-            <h6 className="footer-title">Services</h6>
-            <a className="link link-hover">Products & Services</a>
-            <a className="link link-hover">Customer Stories</a>
-            <a className="link link-hover">Download Apps</a>
-          </nav>
-          <nav>
-            <h6 className="footer-title">Information</h6>
-            <a className="link link-hover">Privacy Policy</a>
-            <a className="link link-hover">Terms & Conditions</a>
-            <a className="link link-hover">Join Us</a>
-          </nav>
-          <nav>
-            <h6 className="footer-title">Social Links</h6>
-            <div className="grid grid-flow-col gap-4">
+            <h6 className="font-semibold text-lg mb-4">Social Links</h6>
+            <div className="flex justify-center items-center gap-3">
               <a>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
