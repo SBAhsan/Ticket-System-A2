@@ -1,6 +1,6 @@
 import React from "react";
 
-const TaskStatus = ({ task, handleRemoveTaskStatus, handleResolveTask }) => {
+const TaskStatus = ({ task, handleRemoveTaskStatus, handleResolveTask, handleRemovedTicketFromCustomerTickets }) => {
   return (
     <div
       className="font-semibold w-64 px-4 py-3 shadow-md rounded-md"
@@ -10,6 +10,7 @@ const TaskStatus = ({ task, handleRemoveTaskStatus, handleResolveTask }) => {
         onClick={() => {
           handleRemoveTaskStatus(task.id);
           handleResolveTask(task.title);
+          handleRemovedTicketFromCustomerTickets(task);
         }}
         className="bg-[#02A53B] text-white w-full rounded-md py-1"
       >

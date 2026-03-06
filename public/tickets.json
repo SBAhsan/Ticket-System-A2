@@ -4,7 +4,7 @@
     "title": "Login page not loading",
     "description": "Users cannot access the login page on the website.",
     "customer": "John Carter",
-    "priority": "High",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "1/17/2024"
   },
@@ -13,7 +13,7 @@
     "title": "Payment gateway timeout",
     "description": "Payments fail due to timeout during checkout.",
     "customer": "Sarah Ahmed",
-    "priority": "Critical",
+    "priority": "HIGH PRIORITY",
     "status": "In Progress",
     "createdAt": "1/18/2024"
   },
@@ -22,7 +22,7 @@
     "title": "Profile update not saving",
     "description": "Changes in user profile are not saved.",
     "customer": "Michael Brown",
-    "priority": "Medium",
+    "priority": "MEDIUM PRIORITY",
     "status": "Open",
     "createdAt": "1/19/2024"
   },
@@ -31,7 +31,7 @@
     "title": "Email notifications delayed",
     "description": "Order confirmation emails arrive very late.",
     "customer": "Aisha Rahman",
-    "priority": "High",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "1/20/2024"
   },
@@ -40,7 +40,7 @@
     "title": "Dashboard loading slowly",
     "description": "Dashboard takes too long to load after login.",
     "customer": "David Wilson",
-    "priority": "Medium",
+    "priority": "MEDIUM PRIORITY",
     "status": "In Progress",
     "createdAt": "1/21/2024"
   },
@@ -49,7 +49,7 @@
     "title": "Search results not appearing",
     "description": "Search feature returns no results for valid queries.",
     "customer": "Fatima Noor",
-    "priority": "High",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "1/22/2024"
   },
@@ -58,7 +58,7 @@
     "title": "Mobile layout broken",
     "description": "UI elements overlap on mobile devices.",
     "customer": "Robert King",
-    "priority": "Low",
+    "priority": "LOW PRIORITY",
     "status": "In Progress",
     "createdAt": "1/23/2024"
   },
@@ -67,7 +67,7 @@
     "title": "Password reset email missing",
     "description": "Users are not receiving password reset emails.",
     "customer": "Nusrat Jahan",
-    "priority": "High",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "1/24/2024"
   },
@@ -76,7 +76,7 @@
     "title": "File upload error",
     "description": "Uploading documents fails in the support form.",
     "customer": "James Anderson",
-    "priority": "Medium",
+    "priority": "MEDIUM PRIORITY",
     "status": "In Progress",
     "createdAt": "1/25/2024"
   },
@@ -85,7 +85,7 @@
     "title": "Notification count incorrect",
     "description": "Unread notification count does not update properly.",
     "customer": "Tanvir Hasan",
-    "priority": "Low",
+    "priority": "LOW PRIORITY",
     "status": "Open",
     "createdAt": "1/26/2024"
   }

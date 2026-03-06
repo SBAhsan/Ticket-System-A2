@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import Ticket from "../Ticket/Ticket";
 import TaskStatus from "../TaskStatus/TaskStatus";
 import ResolveTask from "../ResolveTask/ResolveTask";
@@ -13,7 +13,15 @@ const Tickets = ({
 }) => {
   const tickets = use(ticketsLink);
 
-  console.log(taskStatus);
+  const [removedTicketFromCustomerTickets, setRemovedTicketFromCustomerTickets] = useState([]);
+  
+
+  const handleRemovedTicketFromCustomerTickets = (ticket) => {
+    const newTicketList = tickets.filter(removedTicket => removedTicket.id !== ticket.id)
+    setRemovedTicketFromCustomerTickets(newTicketList);
+  }
+
+  console.log(removedTicketFromCustomerTickets);
 
   return (
     <div className="lg:flex lg:justify-between mt-15">
@@ -23,15 +31,27 @@ const Tickets = ({
           Customer Tickets
         </h3>
         <div className="flex justify-center">
-          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            {tickets.map((ticket) => (
-              <Ticket
-                key={ticket.id}
-                ticket={ticket}
-                handleTaskStatus={handleTaskStatus}
-              ></Ticket>
-            ))}
-          </ul>
+          {removedTicketFromCustomerTickets.length === 0 ? (
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              {tickets.map((ticket) => (
+                <Ticket
+                  key={ticket.id}
+                  ticket={ticket}
+                  handleTaskStatus={handleTaskStatus}
+                ></Ticket>
+              ))}
+            </ul>
+          ) : (
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              {removedTicketFromCustomerTickets.map((ticket) => (
+                <Ticket
+                  key={ticket.id}
+                  ticket={ticket}
+                  handleTaskStatus={handleTaskStatus}
+                ></Ticket>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
 
@@ -51,6 +71,9 @@ const Tickets = ({
                     task={task}
                     handleRemoveTaskStatus={handleRemoveTaskStatus}
                     handleResolveTask={handleResolveTask}
+                    handleRemovedTicketFromCustomerTickets={
+                    handleRemovedTicketFromCustomerTickets
+                    }
                   ></TaskStatus>
                 ))}
               </ul>

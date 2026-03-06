@@ -13,6 +13,7 @@ function App() {
   const [inProgressCount, setInProgressCount] = useState(0);
   const [resolveTasks, setResolveTasks] = useState([]);
   const [resolveCount, setResolveCount] = useState(0);
+  
 
   const handleTaskStatus = (ticket) => {
     const newTasks = [...taskStatus, ticket];
@@ -21,15 +22,14 @@ function App() {
   };
 
   const handleRemoveTaskStatus = (taskId) => {
-    console.log("Resolve task clicked");
     const newTasks = taskStatus.filter((task) => task.id !== taskId);
     setTaskStatus(newTasks);
     setInProgressCount(inProgressCount - 1);
 
     if (newTasks.length === 0) {
-      toast("Congratulations! All the tasks are completed.");
+      toast("Congratulations paglu! All the tasks are completed.");
     } else {
-      toast(`One task is completed. ${newTasks.length} more tasks remaining.`);
+      toast(`One task is completed, paglu! ${newTasks.length} more tasks remaining.`);
     }
   };
 
@@ -38,6 +38,8 @@ function App() {
     setResolveTasks(newResolveTasks);
     setResolveCount(resolveCount + 1);
   };
+
+  
 
   return (
     <div className="max-w-[1200px] mx-auto">
